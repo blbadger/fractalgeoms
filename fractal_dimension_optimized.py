@@ -6,7 +6,7 @@ from PIL import Image, ImageOps
 import numpy as np 
 import matplotlib.pyplot as plt
 
-path = '/home/bbadger/Desktop/snowflake/snowflake752.png'
+path = '/home/bbadger/Desktop/blbadger.github.io-master/fractals/koch_snowflake6.png'
 
 # make grayscale array for image
 image = Image.open(path)
@@ -33,7 +33,8 @@ def box_dimension(image_array, min_size, max_size):
 		for j in range(0, y_size - i, i):
 			for k in range(0, x_size - i, i):
 				field = image_array[j:j+i, k:k+i]
-				if any(any(row > 1) for row in field):
+				# print (field)
+				if any(any(row < 10) for row in field):
 					count += 1
 
 		counts_array.append(count)

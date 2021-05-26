@@ -50,14 +50,14 @@ def check_presence(image_array, i, j, k):
 
 	return False
 
-path = '/home/bbadger/Desktop/snowflake/snowflake752.png'
+path = '/home/bbadger/Desktop/sierpinski/snowflake178.png'
 
 image_array = np.asarray(Image.open(path))
 image_ls = []
 for i in range(len(image_array)):
 	temp = []
 	for j in range(len(image_array[i])):
-		if any(image_array[i][j] > 0):
+		if any(image_array[i][j] < 200):
 			temp.append(1)
 		else:
 			temp.append(0)
